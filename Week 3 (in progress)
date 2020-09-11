@@ -1,0 +1,47 @@
+0
+for our_variable in range(5):
+  print("hello world")
+  
+1
+number_one = int(input("Give me a number."))
+number_two = int(input("Give me a second number."))
+if (number_one > number_two):
+ print(number_one, "is the larger of the two numbers.")
+if (number_one < number_two):
+  print(number_two, "is the larger of the two numbers.")
+if (number_one == number_two):
+  print("hey, I didn't ask for the same number twice!")
+  
+2.
+number_one = int(input("Give me a number."))
+number_two = int(input("Give me a second number."))
+number_three = int(input("Give me a final number!"))
+if (number_one > number_two) and (number_one < number_three):
+ print(number_one, "is the 2nd largest of the 3.")
+if (number_one < number_two) and (number_one > number_three):
+ print(number_two, "is the 2nd largest of the three numbers.")
+if (number_three > number_one) and (number_three < number_two):
+  print(number_three, "is the 2nd largest of the three numbers")
+if (number_three < number_one) and (number_three > number_two):
+  print(number_three, "is the 2nd largest of the three numbers.")
+if (number_two < number_three) and (number_two > number_one):
+  print(number_two, "is the 2nd largest of the three numbers")
+if (number_two > number_three) and (number_two < number_one):
+  print(number_two, "is the 2nd largest of the three numbers")
+ 
+ 3.
+ counter = 0
+num = (int(input("enter a number")))
+if (num % 2 == 0):
+  print("that is an even number")
+  counter = counter + 1
+  print("you have entered", counter,"even numbers")
+while counter < 10:
+ if (num % 2 == 0):
+  counter = counter + 1
+  print(input("enter a number."))
+  print("you have entered", counter, "even numbers")
+if (num % 2 == 0):
+  counter = counter + 1 
+  
+3.
