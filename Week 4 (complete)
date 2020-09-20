@@ -1,0 +1,54 @@
+0)
+def hello() :
+  print("hello world!")
+hello()
+
+1)
+def message():
+  print("We need more cowbell")
+for x in range(5):
+  message()
+  
+ 2)
+ def message():
+  print("We need more cowbell")
+number = int(input("pick a number"))
+for x in range(number):
+  message()
+  
+ 3)
+ def square(number):
+  answer = number * number
+  return answer
+X = square(5)
+Y = square(9)
+print("Five squared is", X,"and nine squared is",Y)
+
+4)
+def bigger10 (number):
+  if number > 10:
+    print(number, "is greater than 10")
+  else:
+    print("10 is greater than", number)
+integer = int(input("give me a number"))
+bigger10(integer)
+
+5)
+def bigger(number1,number2):
+  if number1 > number2:
+    print (number1, "is greater than", number2)
+  else:
+    print (number2, "is greater than", number1)
+X = int(input("give me a number"))
+Y = int(input("give me one more number, please"))
+bigger(X,Y)
+
+6)
+def bigger(number1,number2):
+  if number1 > number2:
+    print("the older of the two people is", number1, "years old.")
+  else:
+    print ("the older of the two people is", number2, "years old")
+X = int(input("How old are you"))
+Y = int(input("How old is your friend?"))
+bigger(X,Y)
