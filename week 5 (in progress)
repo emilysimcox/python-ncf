@@ -32,3 +32,23 @@ def january_day(day_number):
        return day_of_the_week(6)
     if day_number == 7:
        return day_of_the_week(7)
+def number_to_day(X):
+  while X > 7:
+    X = X - 7
+  if X <= 7:
+    if X == 1:
+      return day_of_the_week(1)
+    if X == 2:
+      return day_of_the_week(2)
+    if X == 3:
+      return day_of_the_weel(3)
+    if X == 4:
+      return day_of_the_week(4)
+    if X == 5:
+      return day_of_the_week(5)
+    if X == 6:
+      return day_of_the_week(6)
+    if X == 7:
+      return day_of_the_week(7)
+def month_day_to_number(month_num, day_num):
+  
