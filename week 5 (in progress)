@@ -51,4 +51,8 @@ def number_to_day(X):
     if X == 7:
       return day_of_the_week(7)
 def month_day_to_number(month_num, day_num):
-  
+  if month_num == 1:
+    return day_num
+  if month_num == 2:
+    day_num = day_num + 31
+    return day_num
