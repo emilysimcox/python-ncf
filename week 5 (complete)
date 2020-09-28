@@ -115,10 +115,8 @@ def month_to_num(name):
   if name == "December":
     return 12 
   return month_to_num
-def what_day_of_the_week(month_num,day_num):
-  month_num = month_to_num(month_num)
-  day_of_year = month_day_to_number(month_num,day_num)
-  return day_of_year
-  name_of_day = day_of_the_week(day_of_year)
-  return name_of_day
-print("this is", what_day_of_the_week("March",3))
+def what_day_of_the_week(A,B):
+  month_number = month_to_num(A)
+  yearly_number = month_day_to_number(month_number,B)
+  exact_day = number_to_day(yearly_number)
+  return exact_day
