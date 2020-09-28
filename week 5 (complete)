@@ -42,7 +42,7 @@ def number_to_day(X):
     if X == 2:
       return day_of_the_week(2)
     if X == 3:
-      return day_of_the_weel(3)
+      return day_of_the_week(3)
     if X == 4:
       return day_of_the_week(4)
     if X == 5:
