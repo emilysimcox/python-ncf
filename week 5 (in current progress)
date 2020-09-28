@@ -1,0 +1,124 @@
+def day_of_the_week(day):
+  if day == 1:
+    return "Wednesday"
+  if day == 2:
+    return "Thursday"
+  if day == 3:
+    return "Friday"
+  if day == 4:
+    return "Saturday"
+  if day == 5:
+    return "Sunday"
+  if day == 6:
+    return "Monday"
+  if day == 7:
+    return "Tuesday"
+  return day_of_the_week
+def january_day(day_number):
+  while day_number > 7:
+    day_number = day_number - 7
+  if day_number <= 7:
+    if day_number == 1:
+      return day_of_the_week(1)
+    if day_number == 2:
+       return day_of_the_week(2)
+    if day_number == 3:
+       return day_of_the_week(3)
+    if day_number == 4:
+       return day_of_the_week(4)
+    if day_number == 5:
+       return day_of_the_week(5)
+    if day_number == 6:
+       return day_of_the_week(6)
+    if day_number == 7:
+       return day_of_the_week(7)
+  return january_day
+def number_to_day(X):
+  while X > 7:
+    X = X - 7
+  if X <= 7:
+    if X == 1:
+      return day_of_the_week(1)
+    if X == 2:
+      return day_of_the_week(2)
+    if X == 3:
+      return day_of_the_weel(3)
+    if X == 4:
+      return day_of_the_week(4)
+    if X == 5:
+      return day_of_the_week(5)
+    if X == 6:
+      return day_of_the_week(6)
+    if X == 7:
+      return day_of_the_week(7)
+  return number_to_day
+def month_day_to_number(month_num, day_num):
+  if month_num == 1:
+    return day_num
+  if month_num == 2:
+    day_num = day_num + 31
+    return day_num
+  if month_num == 3:
+    day_num = day_num + 31 + 29
+    return day_num
+  if month_num == 4:
+    day_num = day_num + 31 + 29 + 31
+    return day_num
+  if month_num == 5:
+    day_num = day_num + 31 + 29 + 31 + 30
+    return day_num
+  if month_num == 6:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31
+    return day_num
+  if month_num == 7:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31 + 30
+    return day_num
+  if month_num == 8:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31 + 30 + 31
+    return day_num
+  if month_num == 9:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31 + 30 + 31 + 31
+    return day_num
+  if month_num == 10:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31 + 30 + 31 + 31 + 30
+    return day_num 
+  if month_num == 11:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31
+    return day_num
+  if month_num == 12:
+    day_num = day_num + 31 + 29 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + 30
+    return day_num
+  return month_day_to_number
+def month_to_num(name):
+  if name == "January":
+    return 1
+  if name == "February":
+    return 2
+  if name == "March":
+    return 3
+  if name == "April":
+    return 4
+  if name == "May":
+    return 5
+  if name == "June":
+    return 6
+  if name == "July":
+    return 7
+  if name == "August":
+    return 8
+  if name == "September":
+    return 9
+  if name == "October":
+    return 10
+  if name == "November":
+    return 11
+  if name == "December":
+    return 12 
+  return month_to_num
+def what_day_of_the_week(month_num,day_num):
+  month_num = month_to_num(month_num)
+  day_of_year = month_day_to_number(month_num,day_num)
+  return day_of_year
+  name_of_day = day_of_the_week(day_of_year)
+  return name_of_day
+print("this is", what_day_of_the_week("March",3))
