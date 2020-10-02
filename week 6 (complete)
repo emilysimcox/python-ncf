@@ -1,0 +1,43 @@
+0)
+greetings = ["hello", "world"]
+print(greetings)
+
+1)
+list = []
+
+food = input("name a food")
+list.append(food)
+while food != "stop":
+  food = input("name a food")
+  list.append(food)
+print(list)
+
+2)
+list = []
+
+food = input("name a food, or enter 'stop' to stop")
+list.append(food)
+while not food == "stop":
+  food = input("name a food")
+  list.append(food)
+print(list)
+x = input("You bought one too many groceries, man! Choose something to put back")
+list.remove(x)
+print(list)
+
+3)
+list = []
+
+food = input("name a food, or enter 'stop' to stop")
+list.append(food)
+while not food == "stop":
+  food = input("name a food")
+  list.append(food)
+if "olive" in list:
+  list.remove("olive")
+if "olives" in list:
+  list.remove("olives")
+print(list)
+x = input("You bought one too many groceries, man! Choose something to put back")
+list.remove(x)
+print(list)
