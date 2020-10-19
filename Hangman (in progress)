@@ -1,0 +1,8 @@
+def ChooseWord():
+  word = "balloon"
+  return word
+blank_list = [ ]
+for num in range(6):
+  blank_list.append("_")
+print(blank_list)
+letter1 = input("This is a game of hangman. Enter a letter.")
