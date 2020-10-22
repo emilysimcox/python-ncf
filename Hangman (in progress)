@@ -1,8 +1,30 @@
 def ChooseWord():
-  word = "balloon"
+  word = ("balloon")
   return word
+wrong_guesses = 0
 blank_list = [ ]
 for num in range(6):
   blank_list.append("_")
 print(blank_list)
-letter1 = input("This is a game of hangman. Enter a letter.")
+print ("This is a game of hangman.")
+
+while wrong_guesses < 6:
+  letter = input("Enter a letter.")
+  letter = letter.lower()
+  if letter not in ChooseWord():
+    wrong_guesses = wrong_guesses + 1
+    print(letter,"is NOT part of the secret word.")
+  if letter in ChooseWord():
+    print(letter,"IS in the secret word!")
+  if wrong_guesses == 1:
+    print("head")
+  if wrong_guesses == 2:
+    print ("body")
+  if wrong_guesses == 3:
+    print("right arm")
+  if wrong_guesses == 4:
+    print("left arm")
+  if wrong_guesses == 5:
+    print("right leg")
+  if wrong_guesses == 6:
+    print("left leg! game over!")
