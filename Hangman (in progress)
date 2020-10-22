@@ -5,13 +5,14 @@ def ChooseWord():
 
 wrong_guesses = 0
 blank_list = [ ]
+guessed = ("false")
 
 for num in range(7):
   blank_list.append("_")
 print(blank_list)
 print ("This is a game of hangman.")
 
-while wrong_guesses < 6:
+while wrong_guesses < 6 and guessed == "false":
   guess = input("Enter a letter.")
   guess = guess.lower()
   if guess not in ChooseWord():
@@ -23,15 +24,36 @@ while wrong_guesses < 6:
     for index in indices:
       blank_list[index] = guess 
     print(blank_list)
+  if "_" not in blank_list:
+    guessed = "true"
+    print ("Congratulations! You have guessed the word!")
   if wrong_guesses == 1:
-    print("head")
+    print("   ( )   ")
   if wrong_guesses == 2:
-    print ("body")
+    print("   ( )   ")
+    print("    |    ")
+    print("    |    ")
   if wrong_guesses == 3:
-    print("right arm")
+    print("   ( )   ")
+    print("   /|    ")
+    print("  / |    ")
+    
   if wrong_guesses == 4:
-    print("left arm")
+    print("   ( )   ")
+    print("   /|\   ")
+    print("  / | \  ")
   if wrong_guesses == 5:
-    print("right leg")
+    print("   ( )   ")
+    print("   /|\   ")
+    print("  / | \  ")
+    print("   /     ")
+    print("  /      ")
   if wrong_guesses == 6:
-    print("left leg! game over!")
+    print("   ( )   ")
+    print("   /|\   ")
+    print("  / | \  ")
+    print("   / \   ")
+    print("  /   \  ")
+    print("Game Over!")
+    print("The correct word was", ChooseWord())
+  
