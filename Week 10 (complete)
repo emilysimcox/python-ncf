@@ -1,0 +1,118 @@
+1) 
+import urllib.request
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/Sonnets.txt"
+the_file = urllib.request.urlopen(file_name)
+
+def count_lines (file_name):
+  file_1 = urllib.request.urlopen(file_name)
+  counter = 0
+  for line in file_1:
+    counter = counter + 1
+  return (counter)
+  
+2)
+  import urllib.request
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/Sonnets.txt"
+the_file = urllib.request.urlopen(file_name)
+
+def lines_with_word(file_name, word):
+  file_name = urllib.request.urlopen(file_name)
+  counter = 0
+  for line in file_name:
+    line = line.decode("utf-8")
+    if word in line:
+      counter = counter + 1
+  return (counter)
+
+3)
+import urllib.request
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/Sonnets.txt"
+the_file = urllib.request.urlopen(file_name)
+
+def lines_with_word(file_name, word):
+  file_name = urllib.request.urlopen(file_name)
+  counter = 0
+  for line in file_name:
+    line = line.decode("utf-8")
+    line = line.lower()
+    if word in line:
+      counter = counter + 1
+  return(counter)
+  
+4)
+import urllib.request
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/Sonnets.txt"
+the_file = urllib.request.urlopen(file_name)
+
+def word_count(file_name, word_choice):
+  file_name = urllib.request.urlopen(file_name)
+  counter = 0
+  file_string = file_name.read()
+  file_string = file_string.decode("utf-8")
+  
+  no_breaks = file_string.replace("\n", " ")
+  word_list = no_breaks.split()
+  
+  for word in word_list:
+    word = word.lower()
+    if word == word_choice:
+      counter = counter + 1
+  return(counter)
+  
+5)
+import urllib.request
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/Sonnets.txt"
+the_file = urllib.request.urlopen(file_name)
+
+def word_count(file_name, word_choice):
+  file_name = urllib.request.urlopen(file_name)
+  counter = 0
+  file_string = file_name.read()
+  file_string = file_string.decode("utf-8")
+  file_string = file_string.replace(","," ")
+  file_string = file_string.replace(":"," ")
+  file_string = file_string.replace(";"," ")
+  file_string = file_string.replace("!"," ")
+  file_string = file_string.replace("?"," ")
+  
+  no_breaks = file_string.replace("\n", " ")
+  word_list = no_breaks.split()
+  
+  for word in word_list:
+    word = word.lower()
+    if word == word_choice:
+      counter = counter + 1
+  return(counter)
+
+6)
+import urllib.request
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/Sonnets.txt"
+the_file = urllib.request.urlopen(file_name)
+
+def word_frequency(file_name, chosen_word):
+  file_name = urllib.request.urlopen(file_name)
+  total_words = 0
+  word_count = 0
+  
+  file_string = file_name.read()
+  file_string = file_string.decode("utf-8")
+  file_string = file_string.replace(","," ")
+  file_string = file_string.replace(":"," ")
+  file_string = file_string.replace(";"," ")
+  file_string = file_string.replace("!"," ")
+  file_string = file_string.replace("?"," ")
+  
+  no_breaks = file_string.replace("\n", " ")
+  word_list = no_breaks.split()
+  
+  for word in word_list:
+    total_words = total_words + 1
+  
+  for word in word_list:
+    word = word.lower()
+    if word == chosen_word:
+      word_count = word_count + 1
+  
+  decimal_perc = word_count/total_words
+  final_perc = decimal_perc * 100
+  return final_perc
