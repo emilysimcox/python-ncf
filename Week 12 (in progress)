@@ -1,0 +1,25 @@
+1)
+import pandas
+
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv"
+state_stats = pandas.read_csv(file_name)
+
+median = state_stats["Pop"].median()
+median_row = state_stats[state_stats["Pop"] == median]
+
+print(median_row)
+
+2)
+import pandas
+
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv"
+state_data = pandas.read_csv(file_name)
+
+m = 0
+
+for name in state_data["Name"]:
+  if name[0] == "M":
+    m = m + 1 
+print("There are", m,"states that begin with the letter M.")
+
+3)
