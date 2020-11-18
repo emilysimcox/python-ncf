@@ -23,3 +23,32 @@ for name in state_data["Name"]:
 print("There are", m,"states that begin with the letter M.")
 
 3)
+import pandas
+
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv"
+state_data = pandas.read_csv(file_name)
+
+state_data["Population Density"] = state_data["Pop"] % state_data["Area"]
+
+4)
+import pandas
+
+file_name = "https://raw.githubusercontent.com/mlepinski/Python-Worksheets/master/states.csv"
+state_data = pandas.read_csv(file_name)
+
+state_data["Population Density"] = state_data["Pop"] % state_data["Area"]
+
+max_density = state_data["Population Density"].max()
+max_density_row = state_data[state_data["Population Density"] == max_density]
+print("This is the state with the highest population density.")
+print(max_density_row)
+
+min_density = state_data["Population Density"].min()
+min_density_row = state_data[state_data["Population Density"] == min_density]
+print("This is the state with the lowest population density.")
+print(min_density_row)
+
+median_density = state_data["Population Density"].median()
+median_density_row = state_data[state_data["Population Density"] == median_density]
+print("This is the median state, per population density.")
+print(median_density_row)
