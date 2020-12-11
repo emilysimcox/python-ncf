@@ -44,9 +44,13 @@ class Enemy(pygame.sprite.Sprite):
             self.kill()
         
 
+
 pygame.init()
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+timer = pygame.time.Clock()
+start_time = pygame.time.get_ticks()
 
 ADDENEMY = pygame.USEREVENT + 1
 pygame.time.set_timer(ADDENEMY, 250)
@@ -57,6 +61,7 @@ all_sprites = pygame.sprite.Group()
 all_sprites.add(player)
 
 running = True
+done = False 
 
 clock = pygame.time.Clock()
 
@@ -102,7 +107,27 @@ while running:
       screen.blit(entity.surf, entity.rect)
     if pygame.sprite.spritecollideany(player, enemies):
       player.kill()
-      running = False
+      end_time = pygame.time.get_ticks()
+      Running = False
+      gameOverFont = pygame.font.Font('freesansbold.ttf', 150)
+      WHITE = (255, 255, 255)
+      gameSurf = gameOverFont.render("Game", True, WHITE)
+      overSurf = gameOverFont.render("Over", True, WHITE)
+      gameRect = gameSurf.get_rect()
+      overRect = overSurf.get_rect()
+      gameRect.midtop = (SCREEN_WIDTH / 2, 10)
+      overRect.midtop = (SCREEN_WIDTH / 2, gameRect.height + 10 + 25)
+      screen.blit(gameSurf, gameRect)
+      screen.blit(overSurf, overRect)
+      pygame.display.update()
+      
+      score = (end_time - start_time)  // 1000
+      message = 'Seconds Elapsed: ' + str(score)
+      ClockFont = pygame.font.Font('freesansbold.ttf', 40)
+      ClockColor = (255, 255, 255)
+      screen.blit(ClockFont.render(message, True, ClockColor), (200, 500))
+      pygame.display.flip()
+
     
 
     clock.tick(40)
